@@ -113,7 +113,7 @@ export async function getGenres(apiKey: string): Promise<{ genres: Genre[] }> {
   return response.json();
 }
 
-export function getPosterUrl(posterPath: string | null, width: number = 300): string {
+export function getPosterUrl(posterPath: string | null | undefined, width: number = 300): string {
   if (!posterPath) {
     return '/placeholder-movie.png';
   }
@@ -121,7 +121,7 @@ export function getPosterUrl(posterPath: string | null, width: number = 300): st
 }
 
 export function getBackdropUrl(
-  backdropPath: string | null,
+  backdropPath: string | null | undefined,
   width: number = 780
 ): string {
   if (!backdropPath) {
@@ -131,7 +131,7 @@ export function getBackdropUrl(
 }
 
 export function getProfileUrl(
-  profilePath: string | null,
+  profilePath: string | null | undefined,
   width: number = 200
 ): string {
   if (!profilePath) {
